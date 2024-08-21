@@ -1,0 +1,26 @@
+
+
+<div class="card">
+
+  <label for="inputtext">Get Porkemon</label>
+  <input type="text" name="inputtext" (input)="getPokemon($any($event.target).value)" >
+
+  <div class="card__title">
+    <!-- <h3> {{ pokemon.name | transformador: 'poke':'00'  }} </h3> -->
+    <h2> {{ pokemon.name | uppercase }} </h2>
+  </div>
+
+  <div class="card__body">
+    <img [src]="pokemon.sprites.front_default" height="175" alt="pokemon" srcset="">
+  </div>
+
+  <div class="card__stats">
+    <span
+      class="card__stats__type"
+      *ngFor="let t of pokemon.types"
+    >
+      {{ t.type.name | uppercase | lowercase }}
+    </span>
+  </div>
+
+</div>
